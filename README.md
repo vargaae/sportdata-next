@@ -34,6 +34,24 @@ Sport App fetches data from different API-s about sport championships, matches l
 - TypeScript
 - TailwindCSS
 
+## Setup Application
+
+1. Clone this repo
+2. In the project directory (cd sportdata-next) - Run `npm install`
+3. Connect to [NEWS API](https://newsapi.org/) and [FOOTBALL DATA API](https://www.football-data.org/) -> You must add your own API key in the `.env` file to connect to get data from APIs.
+
+You can grab NEWS API key [here](https://newsapi.org/register)
+, you can grab FOOTBALL DATA API key [here](https://www.football-data.org/client/register)
+
+**Set Up Environment Variables**
+
+Create a new file named `.env` in the root of your project and add the following content and paste your API keys:
+
+```env
+NEWS_API_KEY=
+FOOTBALL_DATA_API_KEY=
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
