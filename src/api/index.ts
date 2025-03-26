@@ -1,4 +1,11 @@
+// TODO: check why don't work with thes urls:
+// https://api.football-data.org/v4/teams/2/matches
+// https://api.football-data.org/v4/competitions
+
+
 import { apiOptions, matchesType } from "@/types";
+
+const uri = 'https://api.football-data.org/v4/teams/4/matches'
 
 const options: apiOptions = {
   next: { revalidate: 30 },
@@ -9,7 +16,8 @@ const options: apiOptions = {
 };
 export const getMatchesFootball = async () => {
   const matchData = await fetch(
-    "https://api.football-data.org/v4/matches",
+    uri,
+    // "https://api.football-data.org/v4/matches",
     options
   );
   return matchData.json();
@@ -17,6 +25,7 @@ export const getMatchesFootball = async () => {
 
 export const getLeaguesFootball = async () => {
   const matchData = await fetch(
+    // uri,
     "https://api.football-data.org/v4/competitions",
     options
   );
@@ -34,7 +43,9 @@ const yesterday = [year, month, day].join("-");
 
 export const getMatchesFootballFinished = async () => {
   const matchData = await fetch(
-    `https://api.football-data.org/v4/matches?date=${yesterday}`,
+    
+    `${uri}?date=${yesterday}`,
+    // `https://api.football-data.org/v4/matches?date=${yesterday}`,
     options
   );
   return matchData.json();

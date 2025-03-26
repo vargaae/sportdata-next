@@ -29,10 +29,10 @@ const Championship = async () => {
         <div className="py-3 px-2 md:px-3 rounded-md flex flex-col bg-gradient-to-b from-[rgb(45,59,87)] to-transparent text-primary mb-2">
           <p>No scheduled matches found in {league} League...</p>
           <Link
-            href="/premier-league"
+            href="/bundesliga"
             className="flex items-center py-2 px-2 rounded-md text-textSecondary hover:bg-[rgb(54,63,78)]"
           >
-            {"->"}You can try instead: Premier League
+            {"->"}You can try instead: Bundesliga
           </Link>
         </div>
       ) : (
@@ -46,10 +46,10 @@ const Championship = async () => {
         <div className="py-3 px-2 md:px-3 rounded-md flex flex-col bg-gradient-to-b from-[rgb(45,59,87)] to-transparent text-primary mb-2">
           <p>No finished matches found in {league} League...</p>
           <Link
-            href="/premier-league"
+            href="/bundesliga"
             className="flex items-center py-2 px-2 rounded-md text-textSecondary hover:bg-[rgb(54,63,78)]"
           >
-            {"->"}You can try instead: Premier League
+            {"->"}You can try instead: Bundesliga
           </Link>
         </div>
       ) : (

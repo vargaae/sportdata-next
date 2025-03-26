@@ -1,12 +1,13 @@
+// TODO: implement UEFA/EC
 import { filterLeague, filterLeagueFinished } from "@/api";
 import LeagueTable from "@/components/league-table/LeagueTable";
 import Link from "next/link";
 
-const Ligue1 = async () => {
-  const league = "Ligue 1";
+const Uefa = async () => {
+  const league = "EC";
 
-  const getLigue1 = await filterLeague(league);
-  const getLigue1LeagueFinished = await filterLeagueFinished(league);
+  const getUefa = await filterLeague(league);
+  const getUefaLeagueFinished = await filterLeagueFinished(league);
 
   const nd = new Date();
   const dateConvert = nd.toDateString();
@@ -25,7 +26,7 @@ const Ligue1 = async () => {
           <p>{`${dateConvert}`}</p>
         </div>
       </div>
-      {getLigue1?.length == 0 ? (
+      {getUefa?.length == 0 ? (
         <div className="py-3 px-2 md:px-3 rounded-md flex flex-col bg-gradient-to-b from-[rgb(45,59,87)] to-transparent text-primary mb-2">
           <p>No scheduled matches found in {league} League...</p>
           <Link
@@ -36,13 +37,13 @@ const Ligue1 = async () => {
           </Link>
         </div>
       ) : (
-        getLigue1?.map((data) => (
+        getUefa?.map((data) => (
           <div key={data.id}>
             <LeagueTable matches={data} />
           </div>
         ))
       )}
-      {getLigue1LeagueFinished?.length == 0 ? (
+      {getUefaLeagueFinished?.length == 0 ? (
         <div className="py-3 px-2 md:px-3 rounded-md flex flex-col bg-gradient-to-b from-[rgb(45,59,87)] to-transparent text-primary mb-2">
           <p>No finished matches found in {league} League...</p>
           <Link
@@ -53,7 +54,7 @@ const Ligue1 = async () => {
           </Link>
         </div>
       ) : (
-        getLigue1LeagueFinished?.map((data) => (
+        getUefaLeagueFinished?.map((data) => (
           <div key={data.id}>
             <LeagueTable matches={data} />
           </div>
@@ -63,4 +64,4 @@ const Ligue1 = async () => {
   );
 };
 
-export default Ligue1;
+export default Uefa;

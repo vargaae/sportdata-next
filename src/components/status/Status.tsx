@@ -11,7 +11,7 @@ const Status = ({
   matchesList: matchesType[];
   matchesListFinished: matchesType[];
 }) => {
-  const [statusMatch, setStatusMatch] = useState<string>("FINISHED");
+  const [statusMatch, setStatusMatch] = useState<string>("TODAY");
 
   useEffect(() => {
     if (matchesList == null) setStatusMatch("FINISHED")
@@ -19,6 +19,7 @@ const Status = ({
   }, [])
   
   return (
+    console.log("matchesList", matchesListFinished),
     <div>
       <div className="flex space-x-4 mb-2 md:mb-4">
       <button
